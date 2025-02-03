@@ -1,0 +1,236 @@
+
+.nav-header {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 2rem;
+    background: linear-gradient(
+        135deg,
+        #019fe8 0%,
+        #e0caba 25%,
+        #67ff71 50%,
+        #8e5af7 75%,
+        #d80c5a 100%
+    );
+    box-shadow: 
+        0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06),
+        inset 0 0 20px rgba(255, 255, 255, 0.1);
+    top: 0;
+    z-index: 100;
+    transition: all 0.3s ease-in-out;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+}
+
+.nav-header.scrolled {
+    padding: 0.5rem 2rem;
+    background: linear-gradient(
+        135deg,
+        rgba(124, 77, 255, 0.95) 0%,
+        rgba(142, 90, 247, 0.95) 50%,
+        rgba(157, 103, 255, 0.95) 100%
+    );
+    backdrop-filter: blur(8px);
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    margin-right: 1.2rem;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.3px;
+}
+
+.nav-link:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #ffffff,
+        transparent
+    );
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover:before {
+    width: 80%;
+}
+
+.nav-link:hover {
+    color: #ffffff;
+    background: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.05)
+    );
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: auto;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.nav-logo:hover {
+    transform: scale(1.05);
+    background-color: transparent;
+    filter: brightness(1.1);
+}
+
+.nav-link.active {
+    background: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.15),
+        rgba(255, 255, 255, 0.05)
+    );
+    color: #ffffff;
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.1),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+.nav-link.active:before {
+    width: 80%;
+}
+
+.nav-link:hover:before {
+    width: 80%;
+}
+
+.nav-link:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-1px);
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: auto;
+    padding: 0.5rem 1rem;
+    transition: transform 0.2s ease;
+}
+
+.nav-logo:hover {
+    transform: scale(1.05);
+    background-color: transparent;
+}
+
+.nav-link.active {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link.active:before {
+    width: 80%;
+}
+
+main {
+    min-height: calc(100vh - 64px);
+    padding: 2rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+body, main {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* Responsive styles */
+@media (max-width: 768px) {
+    .nav-header {
+        padding: 1rem;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .nav-link {
+        margin: 0.3rem;
+        padding: 0.5rem 1rem;
+        font-size: 0.95rem;
+        text-align: center;
+    }
+
+    .nav-logo {
+        margin: 0;
+        width: auto;
+        order: 1;
+    }
+
+    .nav-header.scrolled {
+        padding: 0.8rem 1rem;
+    }
+
+    /* Create a proper mobile menu layout */
+    .nav-header > :not(.nav-logo) {
+        order: 2;
+        flex-basis: calc(33.333% - 0.6rem); /* Distribute remaining space evenly */
+    }
+}
+
+/* Animation for page transitions */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main {
+    animation: fadeIn 0.3s ease-out;
+}
+
+:root {
+    --bg-color: white;
+    --text-color: black;
+}
+
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: white;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.theme-toggle-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: auto;
+}

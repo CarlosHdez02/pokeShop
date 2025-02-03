@@ -1,0 +1,149 @@
+/* Pokemon Info Page Styles */
+.pokemon-info-container {
+    padding: 32px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  
+  .pokemon-info-card {
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+  
+  .pokemon-name {
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 24px;
+  }
+  
+  .pokemon-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 32px;
+  }
+  
+  .pokemon-detail-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    object-fit: contain;
+    background-color: #f1f5f9;
+    padding: 24px;
+    border-radius: 16px;
+  }
+  
+  .pokemon-details {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .section {
+    background-color: #f8fafc;
+    padding: 20px;
+    border-radius: 12px;
+  }
+  
+  .section h2 {
+    margin-bottom: 16px;
+    color: #0f172a;
+  }
+  
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+  }
+  
+  .stat-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    background-color: white;
+    border-radius: 8px;
+  }
+  
+  .stat-name {
+    text-transform: capitalize;
+    color: #64748b;
+  }
+  
+  .stat-value {
+    font-weight: 600;
+    color: #0f172a;
+  }
+  
+  .abilities-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .ability {
+    background-color: #e2e8f0;
+    padding: 6px 12px;
+    border-radius: 16px;
+    text-transform: capitalize;
+    font-size: 0.875rem;
+  }
+
+  .button-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(100px, 1fr)); /* Two columns */
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.addFav, .addCart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    width: 100%; /* Ensure buttons take full width */
+}
+
+.addFav {
+    background-color: #eb1a1a;
+}
+
+.addCart {
+    background-color: #33a76b;
+}
+
+/* Hover effects */
+.addFav:hover {
+    background-color: #c41616;
+    transform: scale(1.05);
+}
+
+.addCart:hover {
+    background-color: #2a8b5c;
+    transform: scale(1.05);
+}
+
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .pokemon-content {
+      grid-template-columns: 1fr;
+    }
+  
+    .pokemon-info-container {
+      padding: 16px;
+    }
+  
+    .pokemon-info-card {
+      padding: 20px;
+    }
+  }

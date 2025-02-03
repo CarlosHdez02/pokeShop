@@ -1,0 +1,103 @@
+.error-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .error-modal {
+    background-color: white;
+    padding: 1.25rem;
+    border-radius: 0.5rem;
+    max-width: 32rem;
+    width: 90%;
+    max-height: 90vh;
+    overflow: auto;
+    position: relative;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+  
+  .error-header {
+    margin-bottom: 1.25rem;
+  }
+  
+  .error-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #dc2626;
+    margin-bottom: 0.625rem;
+    line-height: 1.2;
+  }
+  
+  .error-message {
+    margin-bottom: 1.25rem;
+    color: #374151;
+    line-height: 1.5;
+  }
+  
+  .error-details {
+    background-color: #f3f4f6;
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    margin-bottom: 1.25rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.875rem;
+    white-space: pre-wrap;
+    overflow: auto;
+    max-height: 12.5rem;
+    color: #1f2937;
+    border: 1px solid #e5e7eb;
+  }
+  
+  .error-button {
+    background-color: #3b82f6;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 150ms ease;
+  }
+  
+  .error-button:hover {
+    background-color: #2563eb;
+  }
+  
+  .error-button:focus {
+    outline: 2px solid #60a5fa;
+    outline-offset: 2px;
+  }
+  
+  .error-button:active {
+    background-color: #1d4ed8;
+  }
+  
+  /* Animation classes */
+  .error-modal-enter {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  
+  .error-modal-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 200ms ease-out, transform 200ms ease-out;
+  }
+  
+  .error-modal-exit {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .error-modal-exit-active {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 200ms ease-in, transform 200ms ease-in;
+  }
