@@ -17,6 +17,7 @@ export const PokemonTypes = [
     { id: 16, type: "dark" },
     { id: 17, type: "steel" },
     { id: 18, type: "fairy" },
-    { id: 19, type: "stellar" }
+    { id: 19, type: "stellar" },
+    
   ];
   

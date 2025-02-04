@@ -1,14 +1,19 @@
 import "./App.css";
+import '../src/pages/Cart/Cart.css'
 import { Routes, Route } from "react-router-dom";
-import { Pokemons } from "./pages/Pokemons/Pokemons";
+import { lazy, Suspense } from 'react';
 import { PokemonProvider } from "./context/PokemonProvider";
-import { PokemonInfoPage } from "./pages/PokemonInfo/PokemonInfo";
-import { Layout } from "./layout/layout";
-import { Cart } from "./pages/Cart/Cart";
 import { CartProvider } from "./context/CartProvider";
-import Favourites from "./pages/Favourites/Favourites";
 import { FavouritePokemonProvider } from "./context/FavouritesProvider";
 import { ThemeProvider } from "./context/ThemeProvider";
+import Layout from "./layout/layout";
+import LoadingSpinner from "./utils/LoadingSpinner/Loading";
+
+// Lazy loading
+const Pokemons = lazy(() => import("./pages/Pokemons/Pokemons"));
+const PokemonInfoPage = lazy(() => import("./pages/PokemonInfo/PokemonInfo"));
+const Cart = lazy(() => import("./pages/Cart/Cart"));
+const Favourites = lazy(() => import("./pages/Favourites/Favourites"));
 
 function App() {
   return (
@@ -18,13 +23,15 @@ function App() {
           <CartProvider>
             <FavouritePokemonProvider>
               <Layout>
-                <Routes>
-                  <Route index element={<Pokemons />} />
-                  <Route path="/pokemons" element={<Pokemons />} />
-                  <Route path="/pokemon/:id" element={<PokemonInfoPage />} />
-                  <Route path="/cart" element={<Cart />} />
-                  <Route path="/favourites" element={<Favourites />} />
-                </Routes>
+                <Suspense fallback={<LoadingSpinner/>}>
+                  <Routes>
+                    <Route index element={<Pokemons />} />
+                    <Route path="/pokemons" element={<Pokemons />} />
+                    <Route path="/pokemon/:id" element={<PokemonInfoPage />} />
+                    <Route path="/cart" element={<Cart />} />
+                    <Route path="/favourites" element={<Favourites />} />
+                  </Routes>
+                </Suspense>
               </Layout>
             </FavouritePokemonProvider>
           </CartProvider>

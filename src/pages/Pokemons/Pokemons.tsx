@@ -1,12 +1,12 @@
 import "./Pokemon.css";
-import { usePokemon } from "../../components/hooks/usePokemon";
-import { useFilteredPokemon } from "../../components/hooks/useFilteredPokemon";
+import { usePokemon } from "../../hooks/usePokemon";
+import { useFilteredPokemon } from "../../hooks/useFilteredPokemon";
 import { PokemonTypes } from "../../utils/PokemonTypes";
 import LoadingSpinner from "../../utils/LoadingSpinner/Loading";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 
-export const Pokemons = () => {
+ const Pokemons = () => {
     const { 
         pokemonList, 
         loading, 
@@ -110,3 +110,4 @@ export const Pokemons = () => {
         </>
     );
 };
+export default Pokemons

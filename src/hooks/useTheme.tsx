@@ -1,7 +1,7 @@
-// In useTheme.ts
 import React from "react";
-import { ThemeContext } from "../../context/ThemeProvider";
+import { ThemeContext } from "../context/ThemeProvider";
 export const useTheme = () => {
+    //  light dark theme
     const context = React.useContext(ThemeContext);
     if (context === null) {
         console.error('Theme context is null');

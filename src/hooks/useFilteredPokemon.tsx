@@ -1,7 +1,8 @@
 import { useState, useMemo } from 'react';
-import { Pokemon } from '../../interface/Pokemons.interface';
+import { Pokemon } from '../interface/Pokemons.interface';
 
 export const useFilteredPokemon = (pokemonList: Pokemon[]) => {
+    //  customhook to handle the filtering
     const [query, setQuery] = useState('');
     const [selectedPokemonType, setSelectedPokemonType] = useState<string>('All');
 

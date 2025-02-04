@@ -1,9 +1,10 @@
 import { useState, useCallback } from "react";
 
-import { PokemonAPI } from "../../services/PokemonAPI.service";
-import { Pokemon } from "../../interface/Pokemons.interface";
+import { PokemonAPI } from "../services/PokemonAPI.service";
+import { Pokemon } from "../interface/Pokemons.interface";
 
 export const usePokemon = () => {
+  //in this hook i do the fetching and filtering as well as pagination
   const [pokemonList, setPokemonList] = useState<Pokemon[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);

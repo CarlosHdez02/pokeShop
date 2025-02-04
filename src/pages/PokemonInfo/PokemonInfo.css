@@ -132,6 +132,25 @@
     transform: scale(1.05);
 }
 
+.price-details {
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  text-align: center;
+}
+
+.base-price, .discount {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.final-price {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+}
   
   /* Responsive adjustments */
   @media (max-width: 768px) {

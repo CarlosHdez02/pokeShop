@@ -3,7 +3,7 @@ import './Layout.css'
 import { PokemonLogo } from "../utils/Logo/Logo";
 import { ThemeToggleButton } from "../components/ToggleButton";
 
-export const Layout = ({children}:any) => {
+ const Layout = ({children}:any) => {
     const location = useLocation();
 
     return (
@@ -38,3 +38,4 @@ export const Layout = ({children}:any) => {
         </>
     )
 }
+export default Layout
