@@ -3,6 +3,8 @@
     "composite": true,
     "jsx": "react-jsx",
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "declaration": true,
+    "declarationMap": true,
     "types": ["vite/client"],
     "module": "ESNext",
     "target": "ESNext",
@@ -13,7 +15,9 @@
     "moduleResolution": "node"
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.d.ts"],
-  "exclude": ["src/**/*.spec.ts", "src/**/*.spec.tsx"],  // Remove or adjust test exclusion
+  "exclude": ["src/**/*.spec.ts", "src/**/*.spec.tsx", "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.d.ts"],  
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },

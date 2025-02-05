@@ -1,0 +1,1 @@
+{"version":3,"file":"AdditionModal.d.ts","sourceRoot":"","sources":["AdditionModal.tsx"],"names":[],"mappings":"AAAA,OAAO,qBAAqB,CAAC;AAE7B,MAAM,WAAW,sBAAsB;IACrC,OAAO,EAAE,MAAM,CAAC;IAChB,MAAM,EAAE,OAAO,CAAC;IAChB,OAAO,EAAE,MAAM,IAAI,CAAC;CACrB;AAED,eAAO,MAAM,aAAa,iCAAkC,sBAAsB,mDAYjF,CAAC;AAEF,eAAe,aAAa,CAAC"}

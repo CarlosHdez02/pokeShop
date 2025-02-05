@@ -41,12 +41,12 @@ interface UseFilteredPokemonReturn {
 
 
  vi.mock('../hooks/usePokemon', () => ({
-  usePokemon: vi.fn<[], UsePokemonReturn>()
+  usePokemon: vi.fn<UsePokemonReturn | any> ()
 })); 
 
 
 vi.mock('../hooks/useFilteredPokemon', () => ({
-  useFilteredPokemon: vi.fn<[Pokemon[]], UseFilteredPokemonReturn>()
+  useFilteredPokemon: vi.fn<[Pokemon[]] | UseFilteredPokemonReturn | any>()
 }));
 
 vi.mock('../utils/LoadingSpinner/Loading', () => ({
@@ -209,7 +209,7 @@ describe('Pokemons Component', () => {
 
     test('renders type select with all options', () => {
       renderWithRouter(<Pokemons />);
-      const typeSelect = screen.getByRole('combobox');
+      //const typeSelect = screen.getByRole('combobox');
       
       expect(screen.getByRole('option', { name: 'All' })).toBeInTheDocument();
       expect(screen.getByRole('option', { name: 'Fire' })).toBeInTheDocument();
