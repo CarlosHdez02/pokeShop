@@ -33,7 +33,7 @@ import {
       }
     }
   
-    public async fetchPokemonsByType(type: string, offset = 0, limit = 20): Promise<Pokemon[]> {
+    public async fetchPokemonsByType(type: string, offset = 0, limit = 30): Promise<Pokemon[]> {
       try {
         const response = await fetch(`${this.baseUrl}/type/${type}`);
         if (!response.ok) {
