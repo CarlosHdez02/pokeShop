@@ -179,8 +179,7 @@ describe('Pokemons Component', () => {
       
         const searchInput = screen.getByPlaceholderText('search pokemon...');
         await user.type(searchInput, 'bulba');
-      
-        // Check that the query was updated with the final value 'bulba'
+  
         expect(mockSetQuery).toHaveBeenCalledWith('b');
         expect(mockSetQuery).toHaveBeenCalledWith('u');
         expect(mockSetQuery).toHaveBeenCalledWith('l');
@@ -188,7 +187,7 @@ describe('Pokemons Component', () => {
         expect(mockSetQuery).toHaveBeenCalledWith('a');
         
         
-        // Optionally, check that mockSetQuery was called multiple times with the intermediate values
+      
         expect(mockSetQuery).toHaveBeenCalledTimes(5);
       });
       

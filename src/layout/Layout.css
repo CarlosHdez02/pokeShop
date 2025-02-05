@@ -189,14 +189,14 @@ body, main {
         padding: 0.8rem 1rem;
     }
 
-    /* Create a proper mobile menu layout */
+    
     .nav-header > :not(.nav-logo) {
         order: 2;
-        flex-basis: calc(33.333% - 0.6rem); /* Distribute remaining space evenly */
+        flex-basis: calc(33.333% - 0.6rem); 
     }
 }
 
-/* Animation for page transitions */
+
 @keyframes fadeIn {
     from {
         opacity: 0;

@@ -40,10 +40,10 @@
 .modal-title {
     font-size: 20px;
     font-weight: 600;
-    color: #111827; /* Dark color */
+    color: #111827; 
 }
 
 .modal-message {
     margin-top: 10px;
-    color: #4b5563; /* Gray */
+    color: #4b5563; 
 }

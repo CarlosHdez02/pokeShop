@@ -7,7 +7,7 @@ html, body {
 *, *::before, *::after {
   box-sizing: inherit;
 }
-/* Add these styles to your CSS file */
+
 .pokemonTypes {
   display: flex;
   gap: 8px;

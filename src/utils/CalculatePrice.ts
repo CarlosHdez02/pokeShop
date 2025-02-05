@@ -1,7 +1,7 @@
 import { Pokemon } from "../interface/Pokemons.interface";
 
 export const calculatePokemonPrice = (pokemon: Partial<Pokemon>) => {
-    // Find stats by their name
+
     const getStatValue = (statName: string): number => {
         const stat = pokemon.stats?.find(s => s.stat.name === statName);
         return stat ? stat.base_stat : 0;

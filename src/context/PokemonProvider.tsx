@@ -33,7 +33,7 @@ export const PokemonProvider: React.FC<PokemonProviderProps> = ({ children }) =>
                 const pokemonService = new PokemonAPI();
                 const response = await pokemonService.fetchPokemons();
                 
-                // Type assertion to ensure the response matches our PokemonData type
+             
                 const typedPokemonList = response.results.map(pokemon => ({
                     id: pokemon.id!,
                     name: pokemon.name!,
